@@ -2,8 +2,8 @@
 set -euo pipefail
 # shorten motd
 cd /etc/update-motd.d
-sudo rm 10-help-text 50-* 9*
-sudo sed -i 's/)\./). Let'\''s go!/' 00-header
+sudo rm -f 10-help-text 50-* 9*
+[ -f 00-header ] && sudo sed -i 's/)\./). Let'\''s go!/' 00-header
 cd ~
 # install eza
 sudo apt update
