@@ -35,10 +35,10 @@ uv pip install fastcore fastai notebook tqdm tabulate
 # install shellsage
 uv tool install --python 3.12 shell_sage
 echo "Let's set up shellsage. Enter your anthropic key:"
-read -rs key
+read -rs key < /dev/tty
 echo
 echo "What model should the default be? (Defaults to claude-sonnet-5)"
-read -r model
+read -r model < /dev/tty
 model=${model:-claude-sonnet-5}
 sed -i "s|api_key =|api_key = $key|; s|model = .*|model = $model|" ~/.config/shell_sage/shell_sage.conf
 # public keys
